@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: sticky; /*Посмотреть как работает как появиться наполнение*/
+    top: 0;
+    background-color: white;
+    margin-bottom: 2rem;
+}
+
+.navigationBar{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+button{
+    width: auto;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    border: none;
+    background-color: transparent;
+}
+
+button:hover{
+    color: rgb(255, 116, 3);
+    font-weight: 500;
+}
+
+.reservation{
+    background-color: #2D8A60;
+    border-radius: 10px;
+    padding: 0.8rem;
+    color: white;
+}
+
+.reservation:hover{
+    color: white;
+    font-weight: 400;
+    background-color: #25724f;
+}
