@@ -1,5 +1,6 @@
 import styles from './AboutUs.module.css'
 import Header from '../../components/header/Header.jsx'
+import Footer from '../../components/footer/Footer.jsx'
 import hotel from '../../assets/img/hotel.svg'
 import fork from '../../assets/img/fork.svg'
 import gonc from '../../assets/img/gonc.svg'
@@ -11,27 +12,37 @@ import boat from '../../assets/img/boat.svg'
 
 
 function AboutUs(){
+    const infrastructure = [
+        {id: 1, img: hotel, text: ["Отель с коттеджами",<br/>,"в скандинавском стиле"]},
+        {id: 2, img: fork, text: ["Ресторан и банкетный зал"]},
+        {id: 3, img: gonc, text: ["Гончарная мастерская"]},
+        {id: 4, img: sauna, text: ["Баня"]},
+        {id: 5, img: horse, text: ["Конюшня"]},
+        {id: 6, img: fish, text: ["Рыбалка на родниках"]},
+        {id: 7, img: camp, text: ["Детский лагерь",<br/>,'"Цивилизация"']},
+        {id: 8, img: boat, text: ["Лодочная станция"]},
+    ];
     return(
         <section className={styles.aboutus}>
             <Header />
 
             <div className={styles.philosophy}>
-                <h2>Философия</h2>
-                <p>
+                <h2 className={styles.hs}>Философия</h2>
+                <p className={styles.philosophyP}>
                     Красивое место, интересные люди, запоминающиеся приключение — вот формула ожидаемой реальности.
                 </p>
-                <p>
+                <p className={styles.philosophyP}>
                     Мы устаем от сутолоки городов, информационных потоков и обыденности. Поэтому так ценим возможность пребывания в лесу, около реки, в иных ритмах и смыслах. Это то самое состояние, которое в
                     англоязычном мире называют <strong>outdoor</strong>, во французской традиции — <strong>en plein air</strong>, а у нас просто и понятно — <strong>на природе</strong>.
                 </p>
-                <p>
+                <p className={styles.philosophyP}>
                     Мы редко задумываемся о причинах событий и возможных изменениях. О своих действиях, отношениях, внутренних мотивах. Именно поэтому так ценен тренинг — как пространство безопасного опыта,
                     коллективных переживаний и осмысленного развития.
                 </p>
-                <p>
+                <p className={styles.philosophyP}>
                     А сочетание природы и тренинга — это вообще бомба!
                 </p>
-                <p>
+                <p className={styles.philosophyP}>
                    Так родилась философия:
                     <ul>
                         <li>T-park (тренинг-парк)</li>
@@ -40,16 +51,16 @@ function AboutUs(){
                         <li>T-raid (тренинг-рейды)</li>
                     </ul> 
                 </p>
-                <p>
+                <p className={styles.philosophyP}>
                     Приключение и развитие в одном событии. Сочетание отдыха на природе и прокачки собственных навыков — в индивидуальном, семейном или командном формате.
                 </p>
-                <p>
+                <p className={styles.philosophyP}>
                     <strong>Правила безопасности парка</strong>: Безопасность посетителей — наш приоритет. Мы строго соблюдаем правила поведения в парке, используем современное оборудование и обучаем персонал.
                 </p>
             </div>
 
             <div className={styles.founder}>
-                <h2>Основатель: Дмитрий Сергеев</h2>
+                <h2 className={styles.hs}>Основатель: Дмитрий Сергеев</h2>
                 <p>
                     Он — человек, который придумал и основал Т-Парк..
                 </p>
@@ -67,43 +78,43 @@ function AboutUs(){
             </div>
 
             <div className={styles.infrastructure}>
-                <h2>Инфраструктура</h2>
+                <h2 className={styles.hs}>Инфраструктура</h2>
                 <p>В непосредственной близости от Т-Парка расположены:</p>
-                <div className={styles.divWrapper}>
-                    <div>
-                        <img src={hotel} alt="" />
-                        <p>Отель с коттеджами<br/>в скандинавском стиле</p>
-                    </div>
-                    <div>
-                        <img src={fork} alt="" />
-                        <p>Ресторан<br/>и<br/>банкетный зал</p>
-                    </div>
-                    <div>
-                        <img src={gonc} alt="" />
-                        <p>Гончарная мастерская</p>
-                    </div>
-                    <div>
-                        <img src={sauna} alt="" />
-                        <p>Баня</p>
-                    </div>
-                    <div>
-                        <img src={horse} alt="" />
-                        <p>Конюшня</p>
-                    </div>
-                    <div>
-                        <img src={fish} alt="" />
-                        <p>Рыбалка на родниках</p>
-                    </div>
-                    <div>
-                        <img src={camp} alt="" />
-                        <p>Детский лагерь<br/>"Цивилизация"</p>
-                    </div>
-                    <div>
-                        <img src={boat} alt="" />
-                        <p>Лодочная станция</p>
-                    </div>
+                <div className={styles.firstFlex}>
+                    {infrastructure.slice(0,3).map((item) => (
+                        <div
+                            key={item.id}
+                            className={styles.tile}
+                        >
+                            <img src={item.img} alt={item.img} className={styles.icons}/>
+                            <p>{item.text}</p>
+                        </div>
+                    ))}
+                </div>
+                <div className={styles.secondFlex}>
+                    {infrastructure.slice(3,6).map((item) => (
+                        <div
+                            key={item.id}
+                            className={styles.tile}
+                        >
+                            <img src={item.img} alt={item.img} className={styles.icons}/>
+                            <p>{item.text}</p>
+                        </div>
+                    ))}
+                </div>
+                <div className={styles.thirdFlex}>
+                    {infrastructure.slice(6).map((item) => (
+                        <div
+                            key={item.id}
+                            className={styles.tile}
+                        >
+                            <img src={item.img} alt={item.img} className={styles.icons}/>
+                            <p>{item.text}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
+            <Footer />
         </section>
     )
 }

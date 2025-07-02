@@ -1,24 +1,18 @@
 import styles from './Header.module.css';
 import logo from '../../assets/img/logo.svg';
-import { useNavigate } from 'react-router-dom';
-// import AboutUs from ''
-// import Activities from ''
-// import Quests from ''
-// import Locations from ''
-
+import { Link } from 'react-router-dom';
 
 function Header() {
-    // const navigate = useNavigate();
-    // Вставить onClick={navigate('/')} в каждую кнопку, когда будут соответствующие страницы
     return(
         <section className={styles.header}>
-            <img src={logo} alt="logo" />
+            <Link to='/'><img src={logo} alt="logo" /></Link>
+            
             <div className={styles.navigationBar}>
-                <button>О Нас</button>
-                <button>Активности</button>
-                <button>Квесты</button>
-                <button>Локации</button>
-                <button className={styles.reservation}>Забронировать</button>
+                <Link className={styles.link} to='/about_us'>О Нас</Link>
+                <Link className={styles.link} to='/activities'>Активности</Link>
+                <Link className={styles.link} to='/quests'>Квесты</Link>
+                <Link className={styles.link} to='/locations'>Локации</Link>
+                <Link className={styles.reservation} to='/reservation'>Забронировать</Link>
             </div>
         </section>
     )

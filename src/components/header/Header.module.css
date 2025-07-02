@@ -17,11 +17,12 @@
 .navigationBar{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1rem;
     margin-left: auto;
 }
 
-button{
+.link{
     width: auto;
     font-family: "Roboto", sans-serif;
     font-size: 18px;
@@ -29,18 +30,23 @@ button{
     color: black;
     border: none;
     background-color: transparent;
+    text-decoration: none;
 }
 
-button:hover{
+.link:hover{
     color: rgb(255, 116, 3);
     font-weight: 500;
 }
 
 .reservation{
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
     background-color: #2D8A60;
     border-radius: 10px;
     padding: 0.8rem;
     color: white;
+    text-decoration: none;
 }
 
 .reservation:hover{

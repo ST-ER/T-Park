@@ -13,12 +13,24 @@ h2, p{
     margin: 0;
 }
 
-h2{
+.hs{
     margin-bottom: 2rem;
+    font-size: 28px;
 }
 
 p{
     margin-bottom: 0.5rem;
+}
+
+/* .philosophyP{
+    width: 60%;
+    font-size: 18px;
+    font-weight: 300;
+} */
+
+.icons{
+    width: 3rem;
+    margin-bottom: 1rem;
 }
 
 .philosophy, .founder, .infrastructure{
@@ -31,4 +43,50 @@ p{
     border-radius: 10px;
     padding: 2rem;
     /* Вставить картинку на задний фон и выровнять её по правому краю с легким fade-out */
+}
+
+.philosophy{
+    /* background-image:
+        url('../../assets/img/philosophy.png'),
+        linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0))
+    ;
+    background-position: 
+        calc(90% + 50rem),
+        left    
+    ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.2); */
+}
+
+.firstFlex, .secondFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* justify-content: space-between; */
+    gap: 6rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 2rem;
+}
+
+.thirdFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6rem;
+    margin-left: 11.5rem;
+    margin-right: 11.5rem;
+    margin-top: 2rem;
+}
+
+.tile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15rem;
+    height: 10rem;
+    background-color: rgb(214, 214, 214);
 }
