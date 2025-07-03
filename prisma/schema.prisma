@@ -1,0 +1,160 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Activity {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(255)
+  shortDescription String  @db.Text
+  description      String  @db.Text
+  duration         Int
+  bookingDuration  Int
+  price            Float
+  bookingPrice     Float
+  photoPath        String  @db.VarChar(255)
+  isActive         Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Quest {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(255)
+  shortDescription String  @db.Text
+  description      String  @db.Text
+  ageRestriction   Int
+  duration         Int
+  bookingDuration  Int
+  price            Float
+  bookingPrice     Float
+  photoPath        String  @db.VarChar(255)
+  isActive         Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BoatStation {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(255)
+  seatsCount       Int
+  shortDescription String  @db.Text
+  description      String  @db.Text
+  duration         Int
+  price            Float
+  photoPath        String  @db.VarChar(255)
+  isActive         Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model MasterClass {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(255)
+  shortDescription String  @db.Text
+  description      String  @db.Text
+  ageRestriction   Int
+  duration         Int
+  bookingDuration  Int
+  price            Float
+  bookingPrice     Float
+  photoPath        String  @db.VarChar(255)
+  isActive         Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Rafting {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(255)
+  shortDescription String  @db.Text
+  description      String  @db.Text
+  duration         Int
+  price            Float
+  photoPath        String  @db.VarChar(255)
+  isActive         Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Hiking {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(255)
+  shortDescription String  @db.Text
+  description      String  @db.Text
+  duration         Int
+  price            Float
+  photoPath        String  @db.VarChar(255)
+  isActive         Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CorporateEvent {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(255)
+  shortDescription String  @db.Text
+  description      String  @db.Text
+  duration         Int
+  price            Float
+  photoPath        String  @db.VarChar(255)
+  isActive         Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Training {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(255)
+  shortDescription String  @db.Text
+  description      String  @db.Text
+  duration         Int
+  price            Float
+  photoPath        String  @db.VarChar(255)
+  isActive         Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Employee {
+  id           Int       @id @default(autoincrement())
+  firstName    String    @db.VarChar(100)
+  lastName     String    @db.VarChar(100)
+  phone        String    @unique @db.VarChar(20)
+  email        String    @unique @db.VarChar(255)
+  position     String    @db.VarChar(100) // Должность
+  hireDate     DateTime // Дата приема
+  isActive     Boolean   @default(true) // Работает сейчас
+  accessLevel  Int       @default(1)
+  passwordHash String?   @db.VarChar(255)
+  lastLoginAt  DateTime? // Последний вход
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Customer {
+  id           Int       @id @default(autoincrement())
+  firstName    String    @db.VarChar(100)
+  lastName     String    @db.VarChar(100)
+  phone        String    @unique @db.VarChar(20)
+  email        String    @unique @db.VarChar(255)
+  birthDate    DateTime?
+  discountRate Float     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
